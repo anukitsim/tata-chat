@@ -69,25 +69,26 @@ const SpinnerStyled = styled.div`
 const PreChatButton = styled.button`
   position: relative;
   z-index: 3;
-  background: linear-gradient(135deg, #ff0000, #7b2ff7);
+  background-color: rgba(255, 255, 255, 0.2);
   color: rgba(255, 255, 255, 0.9);
-  border: none;
+  border: 2px solid rgba(255, 255, 255, 0.5);
   padding: 30px 60px;
   font-size: 2rem;
+  font-weight: lighter;
   letter-spacing: 3px;
-  cursor: url('/large-arrow-cursor.png') 16 0, auto;
+  cursor: url('/large-arrow-cursor.png') 16 0, auto; /* Custom cursor */
   border-radius: 25px;
-  box-shadow: 0px 4px 15px rgba(123, 47, 247, 0.6);
-  transition: transform 0.2s ease;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  font-weight: bold;
+  text-transform: uppercase;
 
   &:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 1);
     transform: scale(1.05);
   }
-
-  &:active {
-    transform: scale(0.95);
-  }
 `;
+
 
 const ChatBox = styled.div`
   position: relative;
