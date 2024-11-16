@@ -72,15 +72,12 @@ const PreChatButton = styled.button`
   background-color: rgba(255, 255, 255, 0.2);
   color: rgba(255, 255, 255, 0.9);
   border: 2px solid rgba(255, 255, 255, 0.5);
-  padding: 30px 60px;
-  font-size: 2rem;
-  font-weight: lighter;
-  letter-spacing: 3px;
+  padding: 20px 40px;
+  font-size: 1.4rem;
   cursor: url('/large-arrow-cursor.png') 16 0, auto; /* Custom cursor */
   border-radius: 25px;
   transition: background-color 0.3s, color 0.3s, transform 0.2s;
-  font-weight: bold;
-  text-transform: uppercase;
+  letter-spacing: 2px;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.4);
@@ -88,7 +85,6 @@ const PreChatButton = styled.button`
     transform: scale(1.05);
   }
 `;
-
 
 const ChatBox = styled.div`
   position: relative;
@@ -131,13 +127,11 @@ const MessageRow = styled.div`
 
 const MessageContent = styled.div`
   max-width: 70%;
-  width: ${({ children }) => (children && children.length > 100 ? '100%' : '70%')};
   font-size: 1.2rem;
   line-height: 1.8;
   color: ${({ sender }) =>
     sender === 'user' ? 'rgba(255, 230, 0, 0.9)' : 'rgba(255, 255, 255, 0.9)'};
   padding: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   text-align: ${({ sender }) => (sender === 'user' ? 'right' : 'left')};
 `;
 
@@ -186,7 +180,6 @@ const SendButton = styled.button`
 `;
 
 export default function Chatbot() {
-  // Your functional logic remains unchanged
   const [currentView, setCurrentView] = useState('loading');
   const [input, setInput] = useState('');
   const [conversation, setConversation] = useState([]);
@@ -272,7 +265,7 @@ export default function Chatbot() {
           </LoadingScreen>
         )}
         {currentView === 'preChat' && (
-          <PreChatButton onClick={handleStartChat}>Click to converse</PreChatButton>
+          <PreChatButton onClick={handleStartChat}>click to converse</PreChatButton>
         )}
         {currentView === 'chat' && (
           <ChatBox>
